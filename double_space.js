@@ -10,7 +10,7 @@ while (true) {
     input_text = input_text.trim();
     input_text = input_text.replace(/\s+/gm, ' ');
 
-    alert(`Текст без лишних пробелов: ${input_text}`);
+    alert(`Текст без повторных пробелов: ${input_text}`);
 
 }
 
