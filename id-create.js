@@ -6,14 +6,15 @@
 // Все входные данные - целые десятичные числа
 
 const date = new Date('May 01, 2020 08:46:56');
-const claster = 58;
+const claster = 16;
 const type = 8;
 const user = 5553663;
 
-date_timestamp_16 = (date/1000).toString(16);
+date_timestamp_16 = (date / 1000).toString(16).slice(0, 8);
 
 
 claster_16 = claster.toString(16);
+if (claster_16.length < 2) claster_16 = "0" + claster_16;
 type_16 = type.toString(16);
 user_16 = user.toString(16);
 
