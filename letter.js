@@ -8,17 +8,22 @@ const consonant = ["B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "
 
 input_text = prompt("Введите текст (латинские буквы)");
 
-input_text = input_text.toUpperCase();
+if (!input_text) {
+    alert(`Пользователь отменил ввод!`);
+} else {
+    input_text = input_text.toUpperCase();
 
+    for (let i = 0; i < input_text.length; i++) {
+        if (vowels.includes(input_text[i])) {
+            acc_vowels = acc_vowels + 1;
+        }
 
-for (let i = 0; i < input_text.length; i++) {
-    if (vowels.includes(input_text[i])) {
-        acc_vowels = acc_vowels + 1;
+        if (consonant.includes(input_text[i])) {
+            acc_consonant = acc_consonant + 1;
+        }
     }
 
-    if (consonant.includes(input_text[i])) {
-        acc_consonant = acc_consonant + 1;
-    }
+    alert(`Гласных всего: ${acc_vowels}. Согласных всего: ${acc_consonant}. `);
 }
 
-alert(`Гласных всего: ${acc_vowels}. Согласных всего: ${acc_consonant}. `);
+
